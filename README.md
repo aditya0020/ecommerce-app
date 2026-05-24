@@ -52,110 +52,164 @@ A cross-platform e-commerce application built with React Native, Expo, and TypeS
    ```
 
    Update `.env.local` with your API endpoint:
+   # E-Commerce App
+
+   A cross-platform e-commerce application built with React Native, Expo, and TypeScript. Runs on iOS, Android, and web.
+
+   ## Features
+
+   - **User Authentication** - Register, login, and logout functionality
+   - **Product Catalog** - Browse products with search and category filtering
+   - **Shopping Cart** - Add/remove items, update quantities
+   - **Checkout & Payment** - Complete checkout flow with payment processing
+   - **Order Management** - View order history and order details
+   - **Admin Dashboard** - Manage products, view orders, and analytics
+   - **Responsive Design** - Works on mobile and web using NativeWind + Tailwind CSS
+
+   ## Tech Stack
+
+   - **React Native** & **Expo** - Cross-platform mobile framework
+   - **TypeScript** - Type-safe development
+   - **Expo Router** - File-based routing
+   - **React Navigation** - Navigation management
+   - **NativeWind + Tailwind CSS** - Styling
+   - **Axios** - HTTP client
+   - **AsyncStorage** - Local storage layer
+   - **Chart Kit** - Admin analytics visualization
+   - **React Native Toast** - Toast notifications
+
+   ## Prerequisites
+
+   - Node.js (v18 or higher)
+   - npm or yarn
+   - Expo CLI: `npm install -g expo-cli`
+
+   ## Installation
+
+   1. Clone the repository
+
+      ```bash
+      git clone <your-repo-url>
+      cd ecommerce-app
+      ```
+
+   2. Install dependencies
+
+      ```bash
+      npm install
+      ```
+
+   3. Set up environment variables
+
+      ```bash
+      cp .env.example .env.local
+      ```
+
+      Update `.env.local` with your API endpoint:
+      ```
+      EXPO_PUBLIC_API_URL=https://your-api-url.com
+      ```
+
+   ## Running the App
+
+   ### Web
+   ```bash
+   npm run web
    ```
-   EXPO_PUBLIC_API_URL=https://your-api-url.com
+
+   ### iOS (macOS only)
+   ```bash
+   npm run ios
    ```
 
-## Running the App
+   ### Android
+   ```bash
+   npm run android
+   ```
 
-### Web
-```bash
-npm run web
-```
+   ### Development Mode
+   ```bash
+   npm start
+   ```
 
-### iOS (macOS only)
-```bash
-npm run ios
-```
+   Then press:
+   - `w` for web
+   - `a` for Android
+   - `i` for iOS
 
-### Android
-```bash
-npm run android
-```
+   ## Project Structure
 
-### Development Mode
-```bash
-npm start
-```
+   ```
+   ├── app/                    # Main application code (file-based routing)
+   │   ├── (tabs)/            # Tab-based navigation screens
+   │   ├── login.tsx          # Login screen
+   │   ├── register.tsx       # Registration screen
+   │   └── index.tsx          # Home/splash screen
+   ├── components/            # Reusable components
+   ├── context/              # React Context for state management
+   ├── assets/               # Images and static assets
+   ├── app.json              # Expo configuration
+   ├── tailwind.config.js    # Tailwind CSS configuration
+   └── tsconfig.json         # TypeScript configuration
+   ```
 
-Then press:
-- `w` for web
-- `a` for Android
-- `i` for iOS
+   ## API Integration
 
-## Project Structure
+   This app connects to a backend API endpoint specified in `EXPO_PUBLIC_API_URL`. The API should provide endpoints for:
 
-```
-├── app/                    # Main application code (file-based routing)
-│   ├── (tabs)/            # Tab-based navigation screens
-│   ├── login.tsx          # Login screen
-│   ├── register.tsx       # Registration screen
-│   └── index.tsx          # Home/splash screen
-├── components/            # Reusable components
-├── context/              # React Context for state management
-├── assets/               # Images and static assets
-├── app.json              # Expo configuration
-├── tailwind.config.js    # Tailwind CSS configuration
-└── tsconfig.json         # TypeScript configuration
-```
+   - User authentication (register, login, logout)
+   - Product management (list, search, filter)
+   - Cart operations (add, update, remove, fetch)
+   - Orders (create, fetch, get details)
+   - Admin operations
 
-## API Integration
+   ## Available Scripts
 
-This app connects to a backend API endpoint specified in `EXPO_PUBLIC_API_URL`. The API should provide endpoints for:
+   ```bash
+   npm start          # Start development server
+   npm run web        # Run web version
+   npm run ios        # Run iOS version
+   npm run android    # Run Android version
+   npm run lint       # Run linter
+   npm run reset-project  # Reset to fresh project
+   ```
 
-- User authentication (register, login, logout)
-- Product management (list, search, filter)
-- Cart operations (add, update, remove, fetch)
-- Orders (create, fetch, get details)
-- Admin operations
+   ## Deployment
 
-## Available Scripts
+   ### Web Deployment (Vercel)
+   1. Push to GitHub
+   2. Go to [vercel.com](https://vercel.com)
+   3. Import your GitHub repository
+   4. Set environment variables in Vercel dashboard
+   5. Deploy (automatic on push)
 
-```bash
-npm start          # Start development server
-npm run web        # Run web version
-npm run ios        # Run iOS version
-npm run android    # Run Android version
-npm run lint       # Run linter
-npm run reset-project  # Reset to fresh project
-```
+   ### Mobile Deployment (EAS)
+   ```bash
+   npm install -g eas-cli
+   eas login
+   eas build
+   eas submit
+   ```
 
-## Deployment
+   ## Environment Variables
 
-### Web Deployment (Vercel)
-1. Push to GitHub
-2. Go to [vercel.com](https://vercel.com)
-3. Import your GitHub repository
-4. Set environment variables in Vercel dashboard
-5. Deploy (automatic on push)
+   Create a `.env.local` file (not tracked by git):
 
-### Mobile Deployment (EAS)
-```bash
-npm install -g eas-cli
-eas login
-eas build
-eas submit
-```
+   ```
+   EXPO_PUBLIC_API_URL=https://your-api-endpoint.com
+   ```
 
-## Environment Variables
+   See `.env.example` for reference.
 
-Create a `.env.local` file (not tracked by git):
+   ## Contributing
 
-```
-EXPO_PUBLIC_API_URL=https://your-api-endpoint.com
-```
+   Feel free to fork and submit pull requests.
 
-See `.env.example` for reference.
+   ## License
 
-## Contributing
+   MIT License
 
-Feel free to fork and submit pull requests.
+   ## Support
 
-## License
-
-MIT License
-
-## Support
-
-For issues and questions, please open an issue on GitHub.
+   For issues and questions, please open an issue on GitHub.
 
